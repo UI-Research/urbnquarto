@@ -1,0 +1,176 @@
+---
+title: "Demonstrate the Urban Institute quarto Theme"
+subtitle: "This is an example subtitle"
+author: "Aaron R. Williams"
+affiliation-title: "Urban Institute"
+date: "2022-08-15"
+format:
+  html:
+    theme: urbn.scss
+    self-contained: true
+    code-fold: false
+    code-line-numbers: true
+    html-math-method: katex
+    df-print: default
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    number-depth: 3
+    highlight-style: pygments
+bibliography: references.bib
+---
+
+## Introduction
+
+This analysis was originally by Mine Çetinkaya-Rundel and comes from the Quarto documentation. In this analysis, we build a model predicting sale prices of houses based on data on houses that were sold in the Duke Forest neighborhood of Durham, NC around November 2020. Let's start by loading the packages we'll use for the analysis.
+
+```{r}
+#| label: load-pkgs
+#| code-summary: "Packages"
+#| message: false
+#| warning: false
+
+library(openintro)  # for data
+library(tidyverse)  # for data wrangling and visualization
+library(knitr)      # for tables
+library(broom)      # for model summary
+library(urbnthemes) # for ggplot2 theme
+
+set_urbn_defaults(style = "print")
+
+```
+
+We present the results of exploratory data analysis in @sec-eda and the regression model in @sec-equation.
+
+We're going to do this analysis using literate programming [@knuth1984].
+
+## Data Visualization {#sec-eda}
+
+The data contains `r nrow(duke_forest)` houses. As part of the exploratory analysis let's visualize and summarize the relationship between areas and prices of these houses.
+
+@fig-histogram shows two histograms displaying the distributions of `price` and `area` individually.
+
+```{r}
+#| label: fig-histogram
+#| fig-cap: "Histograms of individual variables"
+#| fig-subcap:
+#|   - "Histogram of `price`s"
+#|   - "Histogram of `area`s" 
+#| layout-ncol: 2
+
+ggplot(duke_forest, aes(x = price)) +
+  geom_histogram(binwidth = 50000) +
+  labs(title = "Histogram of prices")
+
+ggplot(duke_forest, aes(x = area)) +
+  geom_histogram(binwidth = 250) +
+  labs(title = "Histogram of areas")
+```
+
+@fig-scatterplot displays the relationship between these two variables in a scatterplot.
+
+```{r}
+#| label: fig-scatterplot
+#| fig-cap: "Scatterplot of price vs. area of houses in Duke Forest"
+
+duke_forest %>%
+  ggplot(aes(x = area, y = price)) +
+  geom_point() +
+  labs(title = "Price and area of houses in Duke Forest") +
+  scatter_grid()
+
+```
+
+## Data Tables {#sec-tables}
+
+The default for df-print is kable. This is the only type of table that works with the table references. kable works well until there is tons of data, where paged thrives. 
+
+@tbl-stats-kable displays basic summary statistics for these two variables.
+
+```{r}
+#| label: tbl-stats-kable
+#| tbl-cap: "Summary statistics for price and area of houses in Duke Forest (kable)"
+
+duke_forest %>%
+  summarise(
+    `Median price` = median(price),
+    `IQR price` = IQR(price),
+    `Median area` = median(area),
+    `IQR area` = IQR(area),
+    `Correlation, r` = cor(price, area)
+  ) %>%
+  kable(digits = c(0, 0, 0, 0, 2))
+
+```
+
+## Modeling {#sec-equation}
+
+### First Model
+
+We can fit a simple linear regression model of the form shown in @eq-slr.
+
+$$
+price = \hat{\beta}_0 + \hat{\beta}_1 \times area + \epsilon
+$$ {#eq-slr}
+
+@tbl-lm shows the regression output for this model.
+
+```{r}
+#| label: tbl-lm
+#| tbl-cap: "Linear regression model for predicting price from area"
+
+price_fit <- lm(price ~ area, data = duke_forest)
+  
+price_fit %>%
+  tidy() %>%
+  kable(digits = c(0, 0, 2, 2, 2))
+
+```
+
+### Second Model
+
+Let's fit a more complicated multiple linear regression model of the form shown in @eq-mlr. 
+
+$$
+price = \hat{\beta}_0 + \hat{\beta}_1 \times area + \hat{\beta}_2 \times bedrooms + \epsilon
+$$ {#eq-mlr}
+
+@tbl-lm2 shows the regression output for this model.
+
+```{r}
+#| label: tbl-lm2
+#| tbl-cap: "Second linear regression model for predicting price from area"
+
+price_fit2 <- lm(price ~ area + bed, data = duke_forest)
+  
+price_fit2 %>%
+  tidy() %>%
+  kable(digits = c(0, 0, 2, 2, 2))
+
+```
+
+
+## Callouts {#sec-callouts}
+
+:::{.callout-note}
+This template is incomplete and we are always looking for help to expand it!
+:::
+
+:::{.callout-warning}
+Caution, quarto is so powerful you may abandon LaTeX. 
+:::
+
+:::{.callout-important}
+Reproducible work is a cornerstone of quality research. Quarto makes reproducible work easy and fun. 
+:::
+
+:::{.callout-tip collapse="true"}
+Use `library(urbntemplates)` to access Urban Institute quarto templates. 
+:::
+
+:::{.callout-caution collapse="true"}
+Quarto may transform the way the Urban Institute communicates research. 
+:::
+
+
+<!--# ADD SECTION HEADING FOR REFERENCES HERE -->
