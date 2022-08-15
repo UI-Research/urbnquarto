@@ -1,8 +1,9 @@
 ---
 title: "Demonstrate the Urban Institute quarto Theme"
 subtitle: "This is an example subtitle"
-author: "Aaron R. Williams"
-affiliation-title: "Urban Institute"
+author-title: "Authors"
+authors: "Aaron R. Williams and Erika Tyagi"
+affiliation: "Urban Institute"
 date: "2022-08-15"
 format:
   html:
