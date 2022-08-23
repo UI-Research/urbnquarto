@@ -4,12 +4,12 @@ subtitle: "This is an example subtitle"
 author-title: "Authors"
 authors: "Aaron R. Williams and Erika Tyagi"
 affiliation: "Urban Institute"
-date: "2022-08-15"
+date: "2022-08-23"
 format:
   html:
     theme: urbn.scss
     self-contained: true
-    code-fold: false
+    code-fold: true
     code-line-numbers: true
     html-math-method: katex
     df-print: default
@@ -19,19 +19,27 @@ format:
     number-depth: 3
     highlight-style: pygments
 bibliography: references.bib
+editor_options: 
+  chunk_output_type: console
 ---
 
-## Introduction
+## What is Quarto?
 
-This analysis was originally by Mine Çetinkaya-Rundel and comes from the Quarto documentation. In this analysis, we build a model predicting sale prices of houses based on data on houses that were sold in the Duke Forest neighborhood of Durham, NC around November 2020. Let's start by loading the packages we'll use for the analysis.
+[Quarto](https://quarto.org/) is a tool for scientific and technical documentation. Quarto works with R, Julia, Python, and JS Observable. It can create a range of documents from simple .html documents and PDFs to full books and websites. 
+
+## Styling Quarto
+
+HTML documents in Quarto are styled with .scss files. PDFs are styled in Quarto with .tex files. 
+
+## Features
 
 ```{r}
 #| label: load-pkgs
 #| code-summary: "Packages"
 #| message: false
 #| warning: false
+#| echo: false
 
-library(openintro)  # for data
 library(tidyverse)  # for data wrangling and visualization
 library(knitr)      # for tables
 library(broom)      # for model summary
@@ -41,48 +49,78 @@ set_urbn_defaults(style = "print")
 
 ```
 
-We present the results of exploratory data analysis in @sec-eda and the regression model in @sec-equation.
+### Figures
 
-We're going to do this analysis using literate programming [@knuth1984].
+Quarto has powerful tools for imcluding images. It also includes native tools for adding alt text directly to images. For example, the follow code generates the subsequent image:
 
-## Data Visualization {#sec-eda}
+```
+![stenomylus](images/Stenomylus.jpg){#fig-stenomylus fig-alt="A sketch of two stenomylus."}
+```
 
-The data contains `r nrow(duke_forest)` houses. As part of the exploratory analysis let's visualize and summarize the relationship between areas and prices of these houses.
+![stenomylus](images/Stenomylus.jpg){#fig-stenomylus fig-alt="A sketch of two stenomylus."}
 
-@fig-histogram shows two histograms displaying the distributions of `price` and `area` individually.
+Quarto also allows for easily laying out multiple figures.
+
+```
+:::{#fig-camels-combo layout-ncol=2}
+
+![stenomylus](images/Stenomylus.jpg){#fig-stenomylus}
+
+![Hanno](images/camels.jpeg){#fig-camels}
+
+Camels
+:::
+
+```
+
+:::{#fig-camels-combo layout-ncol=2}
+
+![stenomylus](images/Stenomylus.jpg){#fig-stenomylus}
+
+![Hanno](images/camels.jpeg){#fig-camels}
+
+Camels
+:::
+
+### Data Visualization {#sec-dataviz}
+
+Quarto works well with `library(urbnthemes)` -- the Urban Institute's R data visualization theme. 
+
+Consider an examples using the `cars` dataset, which contains `speed` and `dist` for `r nrow(cars)`. @fig-histogram shows two histograms displaying the distributions of `speed` and `dist` individually.
 
 ```{r}
 #| label: fig-histogram
 #| fig-cap: "Histograms of individual variables"
 #| fig-subcap:
-#|   - "Histogram of `price`s"
-#|   - "Histogram of `area`s" 
+#|   - "Histogram of `speed`s"
+#|   - "Histogram of `dist`s" 
 #| layout-ncol: 2
 
-ggplot(duke_forest, aes(x = price)) +
-  geom_histogram(binwidth = 50000) +
-  labs(title = "Histogram of prices")
+ggplot(cars, aes(x = speed)) +
+  geom_histogram(bins = 15) +
+  labs(title = "Histogram of speeds")
 
-ggplot(duke_forest, aes(x = area)) +
-  geom_histogram(binwidth = 250) +
-  labs(title = "Histogram of areas")
+ggplot(cars, aes(x = dist)) +
+  geom_histogram(bins = 15) +
+  labs(title = "Histogram of distances")
+
 ```
 
 @fig-scatterplot displays the relationship between these two variables in a scatterplot.
 
 ```{r}
 #| label: fig-scatterplot
-#| fig-cap: "Scatterplot of price vs. area of houses in Duke Forest"
+#| fig-cap: "Scatterplot of speed vs. distances"
 
-duke_forest %>%
-  ggplot(aes(x = area, y = price)) +
-  geom_point() +
-  labs(title = "Price and area of houses in Duke Forest") +
+cars %>%
+  ggplot(aes(x = speed, y = dist)) +
+  geom_point(alpha = 0.3) +
+  labs(title = "Cars Traveling at Higher Speeds Take Longer to Stop") +
   scatter_grid()
 
 ```
 
-## Data Tables {#sec-tables}
+### Data Tables {#sec-tables}
 
 The default for df-print is kable. This is the only type of table that works with the table references. kable works well until there is tons of data, where paged thrives. 
 
@@ -90,28 +128,40 @@ The default for df-print is kable. This is the only type of table that works wit
 
 ```{r}
 #| label: tbl-stats-kable
-#| tbl-cap: "Summary statistics for price and area of houses in Duke Forest (kable)"
+#| tbl-cap: "Summary statistics for speed and dist (kable)"
 
-duke_forest %>%
+cars %>%
   summarise(
-    `Median price` = median(price),
-    `IQR price` = IQR(price),
-    `Median area` = median(area),
-    `IQR area` = IQR(area),
-    `Correlation, r` = cor(price, area)
+    `Median speed` = median(speed),
+    `IQR speed` = IQR(speed),
+    `Median dist` = median(dist),
+    `IQR dist` = IQR(dist),
+    `Correlation, r` = cor(speed, dist)
   ) %>%
   kable(digits = c(0, 0, 0, 0, 2))
 
 ```
 
-## Modeling {#sec-equation}
+### Diagrams {#sec-diagrams}
 
-### First Model
+Quarto has access to Mermaid and Graphviz for creating diagrams. Here is a simple example from the [Quarto documentation](https://quarto.org/docs/authoring/diagrams.html):
+
+```{mermaid}
+flowchart LR
+  A[Hard edge] --> B(Round edge)
+  B --> C{Decision}
+  C --> D[Result one]
+  C --> E[Result two]
+```
+
+### Equations {#sec-equations}
+
+#### First Model
 
 We can fit a simple linear regression model of the form shown in @eq-slr.
 
 $$
-price = \hat{\beta}_0 + \hat{\beta}_1 \times area + \epsilon
+dist = \hat{\beta}_0 + \hat{\beta}_1 \times speed + \epsilon
 $$ {#eq-slr}
 
 @tbl-lm shows the regression output for this model.
@@ -120,20 +170,20 @@ $$ {#eq-slr}
 #| label: tbl-lm
 #| tbl-cap: "Linear regression model for predicting price from area"
 
-price_fit <- lm(price ~ area, data = duke_forest)
+dist_fit <- lm(dist ~ speed, data = cars)
   
-price_fit %>%
+dist_fit %>%
   tidy() %>%
   kable(digits = c(0, 0, 2, 2, 2))
 
 ```
 
-### Second Model
+#### Second Model
 
 Let's fit a more complicated multiple linear regression model of the form shown in @eq-mlr. 
 
 $$
-price = \hat{\beta}_0 + \hat{\beta}_1 \times area + \hat{\beta}_2 \times bedrooms + \epsilon
+dist = \hat{\beta}_0 + \hat{\beta}_1 \times speed + \hat{\beta}_2 \times speed ^ 2 + \epsilon
 $$ {#eq-mlr}
 
 @tbl-lm2 shows the regression output for this model.
@@ -142,14 +192,17 @@ $$ {#eq-mlr}
 #| label: tbl-lm2
 #| tbl-cap: "Second linear regression model for predicting price from area"
 
-price_fit2 <- lm(price ~ area + bed, data = duke_forest)
+dist_fit2 <- lm(dist ~ poly(speed, degree = 2, raw = TRUE), data = cars)
   
-price_fit2 %>%
+dist_fit2 %>%
   tidy() %>%
   kable(digits = c(0, 0, 2, 2, 2))
 
 ```
 
+### Cross references
+
+This document is littered with cross references. These are easy to add with tags and to reference with `@`. 
 
 ## Callouts {#sec-callouts}
 
@@ -173,5 +226,14 @@ Use `library(urbntemplates)` to access Urban Institute quarto templates.
 Quarto may transform the way the Urban Institute communicates research. 
 :::
 
+## Citations
+
+Quarto simplifies adding citations to the text of a document and the reference section. It also has powerful [Zotero](https://www.zotero.org/) integrations. For example, the following text generates the subsequent output.  
+
+```
+We're going to do this analysis using literate programming [@knuth1984].
+```
+
+We're going to do this analysis using literate programming [@knuth1984].
 
 <!--# ADD SECTION HEADING FOR REFERENCES HERE -->
