@@ -4,7 +4,9 @@ subtitle: "This is an example subtitle"
 author-title: "Authors"
 authors: "Aaron R. Williams and Erika Tyagi"
 affiliation: "Urban Institute"
-date: "2022-08-23"
+date: today
+abstract-title: "Quarto at Urban"
+abstract: "This document contains examples for how to use leverage many of Quarto's capabilities at the Urban Institute."
 format:
   html:
     theme: urbn.scss
@@ -31,7 +33,7 @@ editor_options:
 
 HTML documents in Quarto are styled with .scss files. PDFs are styled in Quarto with .tex files. 
 
-## Features
+## Figures and Visualizations
 
 ```{r}
 #| label: load-pkgs
@@ -49,7 +51,7 @@ set_urbn_defaults(style = "print")
 
 ```
 
-### Figures
+### Figures {#sec-figures}
 
 Quarto has powerful tools for imcluding images. It also includes native tools for adding alt text directly to images. For example, the follow code generates the subsequent image:
 
@@ -68,7 +70,7 @@ Quarto also allows for easily laying out multiple figures.
 
 ![Hanno](images/camels.jpeg){#fig-camels}
 
-Camels
+Stenomylus and Camels
 :::
 
 ```
@@ -79,7 +81,7 @@ Camels
 
 ![Hanno](images/camels.jpeg){#fig-camels}
 
-Camels
+Stenomylus and Camels
 :::
 
 ### Data Visualization {#sec-dataviz}
@@ -154,9 +156,9 @@ flowchart LR
   C --> E[Result two]
 ```
 
-### Equations {#sec-equations}
+## Equations {#sec-equations}
 
-#### First Model
+### First Model
 
 We can fit a simple linear regression model of the form shown in @eq-slr.
 
@@ -178,7 +180,7 @@ dist_fit %>%
 
 ```
 
-#### Second Model
+### Second Model
 
 Let's fit a more complicated multiple linear regression model of the form shown in @eq-mlr. 
 
@@ -200,9 +202,46 @@ dist_fit2 %>%
 
 ```
 
-### Cross references
+## Cross references {#sec-cross-references}
 
-This document is littered with cross references. These are easy to add with tags and to reference with `@`. 
+This document is littered with cross references. Cross references require labelling objects. For example:
+
+```markdown
+## Cross references {#sec-cross-references}
+
+$$
+dist = \hat{\beta}_0 + \hat{\beta}_1 \times speed + \epsilon
+$$ {#eq-slr}
+
+```
+
+After labeling objects, simply reference the tags with `@`. 
+
+The numbers in cross references automatically update when additional referenced objects are added (e.g. a table is added before table 1).
+
+## Footnotes {#sec-footnotes}
+
+Here is an inline note^[The tooltip is pretty cool!], footnote[^1], and a much longer footnote.[^longnote]
+
+[^1]: I suppose the footnotes are really more endnotes. 
+
+[^longnote]: The longnote gives the ability to add very long footnotes. 
+  
+  Long notes can contain multiple paragraphs. 
+
+The notes are created with the following:
+
+```markdown
+Here is an inline note^[The tooltip is pretty cool!], footnote[^1], and a much longer footnote.[^longnote]
+
+[^1]: I suppose the footnotes are really more endnotes. 
+
+[^longnote]: The longnote gives the ability to add very long footnotes. 
+  
+  Long notes can contain multiple paragraphs. 
+
+The notes are created with the following:
+```
 
 ## Callouts {#sec-callouts}
 
