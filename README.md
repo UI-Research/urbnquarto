@@ -7,7 +7,7 @@ This repository contains work-in-progress templates for working with Quarto at t
 ## Example output 
 
 * [Web report](https://ui-research.github.io/urbnquarto/web-report/web-report.html): An HTML document with data visualizations, figures, tables, diagrams, equations, references, citations, and more. 
-* [Written report](https://github.com/UI-Research/urbnquarto/docx-report/urbn-quarto-template.docx): A DOCX document based on [Urban's brief template](https://urbanorg.app.box.com/s/lt0w0oyp8i44mx1bcbb0qmqukeu1hnxn). 
+* [Written report](https://github.com/UI-Research/urbnquarto/raw/main/docx-report/urbn-quarto-template.docx): A DOCX document based on [Urban's brief template](https://urbanorg.app.box.com/s/lt0w0oyp8i44mx1bcbb0qmqukeu1hnxn). 
 * [Presentation](https://ui-research.github.io/urbnquarto/presentation/presentation.html): An HTML document for slide decks using [reveal.js](https://quarto.org/docs/presentations/revealjs/). 
 
 ## Contribute 
