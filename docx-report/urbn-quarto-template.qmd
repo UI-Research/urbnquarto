@@ -1,0 +1,263 @@
+---
+title: "An Urban-themed template for creating Word outputs"
+format: 
+  docx:
+    toc: true
+    fig-width: 7.5
+    fig-height: 5
+    reference-doc: urban-brief-template.docx
+date: last-modified
+date-format: short
+execute:
+  echo: false
+  eval: true
+  include: true
+  message: false
+  warning: false
+---
+
+This Quarto template contains example code for generating text styled to align with Urban's brief template. 
+
+::: {custom-style="Authors"}
+Author 1 Name, Author 2 Name, and Author 3 Name (Authors style)
+:::
+
+::: {custom-style="Authors Affiliation"}
+AUTHORS’ AFFILIATION (USE IF ANY AUTHOR IS NON-URBAN; IF ALL URBAN AUTHORS, DELETE THIS TEXT)
+:::
+
+::: {custom-style="Date"}
+Month and Year (Date Style)
+:::
+
+::: {custom-style="Brief Intro Para"}
+Body Text style or Brief Intro Para style for first paragraph (text shown is in Brief Intro Para style). 
+:::
+
+::: {custom-style="Body Text First Indent"}
+Body Text First Indent style for all subsequent paragraphs. 
+:::
+
+::: {custom-style="Heading 1"}
+First-Level Heading in Title Case (Heading 1 style)
+:::
+
+::: {custom-style="Body Text"}
+Body Text style for first paragraph under a heading. 
+:::
+
+::: {custom-style="Body Text First Indent"}
+Body Text First Indent style for all subsequent paragraphs.
+:::
+
+::: {custom-style="Bulleted List"}
+Bulleted List style for bulleted lists.
+:::
+
+::: {custom-style="Bulleted List 2"}
+Bulleted List 2 style for second-level bulleted items under a numbered or bulleted list item.
+:::
+
+::: {custom-style="Bulleted List 2"}
+Another item using Bulleted List 2 style.
+:::
+
+::: {custom-style="Indented Text"}
+Indented Text style for ordinary paragraphs under a numbered or bulleted list item.
+:::
+
+::: {custom-style="Numbered List"}
+Numbered List style for numbered lists
+:::
+
+::: {custom-style="Numbered List 2"}
+Numbered List 2 style for second-level lettered items under a numbered or bulleted list item.
+:::
+
+::: {custom-style="Numbered List 2"}
+Another paragraph using Numbered List 2 style.
+:::
+
+::: {custom-style="Numbered List"}
+Another item using Numbered List style
+:::
+
+::: {custom-style="Heading 2"}
+Second-Level Heading in Title Case (Heading 2)
+:::
+
+::: {custom-style="Body Text"}
+Body Text style for first paragraph under a heading.
+:::
+
+::: {custom-style="Heading 3"}
+THIRD-LEVEL HEADING; ALL CAPS IS BUILT INTO STYLE (HEADING 3 STYLE)
+:::
+
+::: {custom-style="Body Text"}
+Body Text style for first paragraph under a heading.
+:::
+
+::: {custom-style=""}
+Fourth-level headings are run into the text. Select the first clause or sentence of your paragraph, then apply the Heading 4 (D) style.
+:::
+
+::: {custom-style="Pull Quote"}
+Pull Quote style for pull quotes. 
+:::
+
+::: {custom-style="Pull Quote"}
+—Pull quote attribution in sentence case
+:::
+
+::: {custom-style="Body Text First Index"}
+Body Text First Indent style for all subsequent paragraphs.
+:::
+
+::: {custom-style="Block Text"}
+Block Text style for longer (100+ words) quotes and excerpts.
+:::
+
+::: {custom-style="Box Number"}
+BOX 1 (BOX NUMBER STYLE)
+:::
+
+::: {custom-style="Box Title"}
+Box Title in Title Case (Box Title style)
+:::
+
+::: {custom-style="Box Body Text"}
+Box Body Text for first paragraph.
+:::
+
+::: {custom-style="Box Body Text First Indent"}
+Box Body Text First Indent for all subsequent paragraphs.
+:::
+
+::: {custom-style="Box Bulleted List"}
+Box Bulleted List style for lists within boxes
+:::
+
+::: {custom-style="Box Bulleted List"}
+Another item using Box Bulleted List style
+:::
+
+::: {custom-style="Box Body Text First Indent"}
+Box Body Text First Indent for all subsequent paragraphs.
+:::
+
+::: {custom-style="Box Note"}
+Box Note style for sources and notes. Change “Source:” to bold. If your box doesn’t have notes, use Box Body Text_Last style to add the gray border.
+:::
+
+::: {custom-style="Figure/Table Number"}
+FIGURE 1 (FIGURE/TABLE NUMBER STYLE)
+:::
+
+::: {custom-style="Figure/Table Title"}
+Title in Title Case (Figure/Table Title style)
+:::
+
+::: {custom-style="Figure/Table Subtitle"}
+Subtitle or explainer in sentence case (Figure/Table Subtitle style)
+:::
+
+
+URBAN INSTITUTE LOGO HERE
+(it appears just to be appropriately colored and styled text, not an image: Lato, 9, all caps, urban in urban blue, institute in urban black)
+
+::: {custom-style="Figure/Table Notes"}
+Source: Figure/Table Notes style. Source in sentence case, except proper nouns. Change “Source:” to bold.
+Notes: Figure/Table Notes style. Notes in sentences (and sentence case). Change “Notes:” to bold.
+:::
+
+::: {custom-style="Figure/Table Number"}
+TABLE 1 (FIGURE/TABLE NUMBER STYLE)
+:::
+
+::: {custom-style="Figure/Table Title"}
+Title in Title Case (Figure/Table Title style)
+:::
+
+::: {custom-style="Figure/Table Subtitle"}
+Subtitle or explainer in sentence case (Figure/Table Subtitle style)
+:::
+
+Table body goes here...
+
+::: {custom-style="Figure/Table Notes"}
+Source: Figure/Table Notes style. Source in sentence case, except proper nouns. Change “Source:” to bold.
+Notes: Figure/Table Notes style. Notes in sentences (and sentence case). Change “Notes:” to bold.
+:::
+
+::: {custom-style="Heading 1"}
+Notes
+:::
+
+::: {custom-style="Reference"}
+Endnotes should appear automatically under the Notes heading. If they’re showing up somewhere else, ask your editor or your center’s Word expert for assistance. 
+Use notes to cite blog posts, legal citations, magazine articles (print or online), newspaper articles (print or online), personal communications (e.g., e-mails, interviews), news releases, and web pages. For more guidance, see the Urban Institute style guide, https://explorer.urban.org/page/2232.
+:::
+
+::: {custom-style="Heading 1"}
+References
+:::
+
+::: {custom-style="Reference"}
+Use author-date citations and references for books, chapters in books, dissertations/theses, journal articles, papers or presentations from meetings, research briefs and papers, testimonies, and working papers. In the interest of shorter reference lists, URLs for PDFs posted on websites may be embedded inside the publication title in reference list rather than provided in full at the end of the citation. 
+
+Sample references for a book, a report, a journal article, and a working paper appear below. For more guidance, see the Urban Institute style guide, https://explorer.urban.org/page/2232.
+
+Blinder, Alan S. 2022. A Monetary and Fiscal History of the United States, 1961–2021. Princeton, NJ: Princeton University Press.
+Katz, Batia, William J. Congdon, and Jessica Shakesprere. 2022. Measuring Job Quality: Current Measures, Gaps, and New Approaches. Washington, DC: Urban Institute. 
+
+Lawrence, Daniel S., Nancy G. La Vigne, Margaret Goff, and Paige S. Thompson. 2019. “Lessons Learned Implementing Gunshot Detection Technology: Results of a Process Evaluation in Three Major Cities.” Justice Evaluation Journal 1 (2): 109–29. 
+
+Parker, Jonathan A., Jake Schild, Laura Erhard, and David Johnson. 2022. “Household Spending Responses to the Economic Impact Payments of 2020: Evidence from the Consumer Expenditure Survey.” Working Paper 29648. Cambridge, MA: National Bureau of Economic Research. 
+:::
+
+::: {custom-style="Heading 1"}
+About the Authors
+:::
+
+::: {custom-style="Author Bio"}
+Author Name in Bold but the rest of the text lightface. Use Author Bios style. You can paste your bio from your urban.org author page here. In the interest of space, you may want to shorten it to three or four sentences. Author bios no longer include photos.
+
+Author Name in Bold but the rest of the text lightface. Use Author Bios style. You can paste your bio from your urban.org author page here. In the interest of space, you may want to shorten it to three or four sentences. Author bios no longer include photos.
+:::
+
+::: {custom-style="Heading 1"}
+Acknowledgments
+:::
+
+::: {custom-style="Body Text"}
+This brief was funded by [insert your funder name(s) here]. We are grateful to them and to all our funders, who make it possible for Urban to advance its mission. 
+:::
+
+::: {custom-style="Body Text First Index"}
+The views expressed are those of the author/authors and should not be attributed to the Urban Institute, its trustees, or its funders. Funders do not determine research findings or the insights and recommendations of Urban experts. Further information on the Urban Institute’s funding principles is available at urban.org/fundingprinciples.
+
+[The preceding two paragraphs should appear, as is, in all Urban briefs. If you need to adjust this language beyond adding your funder name, please notify your editor.] 
+
+[Add any other thanks and contract details here. It may be appropriate to also acknowledge your funder’s funder(s). When in in doubt, please check with your center VP and Contracts.] 
+:::
+
+::: {custom-style="About Urban Heading"}
+ABOUT THE URBAN INSTITUTE
+:::
+
+::: {custom-style="About Urban Body"}
+The Urban Institute is a nonprofit research organization that provides data and evidence to help advance upward mobility and equity. We are a trusted source for changemakers who seek to strengthen decisionmaking, create inclusive economic growth, and improve the well-being of families and communities. For more than 50 years, Urban has delivered facts that inspire solutions—and this remains our charge today.
+
+Copyright © Month Year. Urban Institute. Permission is granted for reproduction of this file, with attribution to the Urban Institute. 
+:::
+
+::: {custom-style="About Urban Body"}
+500 L’Enfant Plaza SW
+Washington, DC 20024
+www.urban.org
+:::
+
+::: {custom-style}
+Urban Institute Logo
+:::

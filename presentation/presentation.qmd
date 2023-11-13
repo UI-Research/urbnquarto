@@ -1,0 +1,108 @@
+---
+title: "Demonstrate Revealjs Quarto slides"
+subtitle: "This is an example subtitle"
+author: "Erika Tyagi"
+format: 
+  revealjs:
+    menu: false 
+    embed-resources: true
+    theme: urbn.scss    
+    logo: images/urban-institute-logo-2.png
+    include-after-body: format-title-page.html
+title-slide-attributes: 
+    data-background-image: images/urban-institute-logo-1.png
+    data-background-size: 25%
+    data-background-position: 3% 85%
+---
+
+## What is Quarto?
+
+* [Quarto](https://quarto.org/) is a tool for scientific and technical documentation.
+* Quarto works with R, Julia, Python, and JS Observable.
+* It can create a range of documents from simple .html documents and PDFs to full books and websites. 
+
+## Incrementing text 
+
+It's easy to display lists incrementally: 
+
+::: incremental
+* First item 
+* Second item 
+* Third item 
+:::
+
+. . .
+
+You can uses pauses and fragments to make other content display incrementally. 
+
+## Displaying code 
+
+```{.r}
+library(tidyverse)  
+library(urbnthemes) 
+
+set_urbn_defaults(style = "print")
+
+ggplot(cars, aes(x = speed)) +
+  geom_histogram(bins = 15) +
+  labs(title = "Histogram of speeds")
+```
+
+## Rendering code 
+
+```{r}
+#| label: load-pkgs
+#| code-summary: "Packages"
+#| message: false
+#| warning: false
+#| echo: false
+
+library(tidyverse)  # for data wrangling and visualization
+library(knitr)      # for tables
+library(broom)      # for model summary
+library(urbnthemes) # for ggplot2 theme
+
+set_urbn_defaults(style = "print")
+```
+
+```{r}
+#| label: fig-histogram
+#| fig-cap: "Histograms of individual variables"
+#| fig-subcap:
+#|   - "Histogram of `speed`s"
+#|   - "Histogram of `dist`s" 
+#| layout-ncol: 2
+
+ggplot(cars, aes(x = speed)) +
+  geom_histogram(bins = 15) +
+  labs(title = "Histogram of speeds")
+
+ggplot(cars, aes(x = dist)) +
+  geom_histogram(bins = 15) +
+  labs(title = "Histogram of distances")
+```
+
+## Using tabsets 
+
+::: panel-tabset
+### Code
+```{.r}
+ggplot(cars, aes(x = speed)) +
+  geom_histogram(bins = 15) +
+  labs(title = "Histogram of speeds")
+```
+
+### Plot   
+```{r}
+#| fig-width: 8
+#| fig-height: 4
+
+ggplot(cars, aes(x = speed)) +
+  geom_histogram(bins = 15) +
+  labs(title = "Histogram of speeds")
+```
+:::
+
+## More resources 
+
+For a full description of the capabilities of Revealjs with Quarto, see the official [demo](https://quarto.org/docs/presentations/revealjs/demo) and [documentation](https://quarto.org/docs/presentations/revealjs/). 
