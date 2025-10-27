@@ -251,6 +251,8 @@ This is an informative tooltip.
 
 ::::
 
+<br> 
+
 1. **Define the grid layout**
 - An outer container is defined using `.sample-grid-2` CSS class.
 
