@@ -33,6 +33,7 @@ a {
   box-sizing: content-box;
   width: 100%;
   box-shadow: var(--shadow);
+  margin-top: 1.8em;
 }
 
 .sample-grid .col1 {
@@ -82,6 +83,21 @@ a {
   transition: transform 0.01s;
 }
 
+.chart-toggle {
+  cursor: pointer;
+  border: none;
+  z-index: 3;
+  background-color: transparent;
+  vertical-align: middle;
+}
+
+.chart-toggle-button {
+  fill: var(--cyan);
+  font-size: 0.5em;
+  vertical-align: middle;
+  width: 40px; /* Set a fixed width for the icon */
+  height: 40px; /* Set a fixed height for the icon */
+}
 
 /* Collapse & Cards */
 .attached-collapse,

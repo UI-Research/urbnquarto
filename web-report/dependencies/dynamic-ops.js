@@ -55,4 +55,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Toggle chart button on 
+    document.querySelectorAll('.chart-toggle').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            const toggle_button = this.querySelector('.chart-toggle-button use');
+            const isButtonOff = toggle_button.getAttribute('href') === '#icon-toggle-off';
+            
+           // Extract toggleId from the data-toggle-id attribute
+            const toggleId = this.dataset.toggleId; 
+
+            // Find relevant chart elements using toggleId
+            const chartWithFloorsTargets = document.getElementById('chart-with-floors-targets-' + toggleId);
+            const chartWithout = document.getElementById('chart-without-' + toggleId);
+            const turnOnText = document.getElementById('turn-on-text-' + toggleId);
+            const turnOffText = document.getElementById('turn-off-text-' + toggleId);
+
+            if (isButtonOff) {
+                // Turn on floors and targets
+                toggle_button.setAttribute('href', '#icon-toggle-on');
+                chartWithFloorsTargets.style.display = 'block';
+                chartWithout.style.display = 'none';
+                turnOffText.style.display = 'inline';
+                turnOnText.style.display = 'none';
+            } else {
+                // Turn off floors and targets
+                toggle_button.setAttribute('href', '#icon-toggle-off');
+                chartWithFloorsTargets.style.display = 'none';
+                chartWithout.style.display = 'block';
+                turnOffText.style.display = 'none';
+                turnOnText.style.display = 'inline';
+            }
+        });
+    });
+
 });
