@@ -23,50 +23,44 @@ format:
     embed-resources: true
     link-external-newwindow: true
     include-in-header:
+            # </svg>
+            # </svg>
         - text: |
             <script src="dependencies/dynamic-ops.js"></script>
-
-            <svg style="display:none;">
-                <symbol id="icon-chevron-up"
-                    xmlns="http://www.w3.org/2000/svg" 
-                    viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/>
                 </symbol>
             </svg>
-
+            
+                </symbol>
+            </svg>
+            </svg>
+            <svg style="display:none;">
+                <symbol id="icon-chevron-up"
+                </symbol>
+                    xmlns="http://www.w3.org/2000/svg" 
+                    viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/>
             <svg style="display:none;">
                 <symbol id="icon-chevron-down"
                     xmlns="http://www.w3.org/2000/svg" 
                     viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
-                </symbol>
-            </svg>
-            
             <svg  style="display:none;">
                 <symbol id="icon-info-circle"
+                </symbol>
                     xmlns="http://www.w3.org/2000/svg" 
                     viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
-                </symbol>
-            </svg>
-
             <svg style="display:none;">
                 <symbol id="icon-toggle-on"
+                </symbol>
                     xmlns="http://www.w3.org/2000/svg" 
                     viewBox="0 0 576 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M192 64C86 64 0 150 0 256S86 448 192 448l192 0c106 0 192-86 192-192S490 64 384 64L192 64zm192 96a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/>
-                </symbol>
-            </svg>
-
             <svg style="display:none;">
                 <symbol id="icon-toggle-off"
                     xmlns="http://www.w3.org/2000/svg" 
                     viewBox="0 0 576 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M384 128c70.7 0 128 57.3 128 128S454.7 384 384 384l-192 0c-70.7 0-128-57.3-128-128s57.3-128 128-128l192 0zM576 256c0-106-86-192-192-192L192 64C86 64 0 150 0 256S86 448 192 448l192 0c106 0 192-86 192-192zM192 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/>
-                </symbol>
-            </svg>
-
 execute:
   engine: jupyter
   echo: false      
   warning: false   
   message: false 
-
 editor_options: 
   chunk_output_type: console
 ---
@@ -85,7 +79,7 @@ By combining Quarto's document authoring capabilities with custom CSS and JavaSc
 
 ## Examples
 
-### Two-Column Grid with an Interactive Dropdown Button {#interactive-dropdown}
+### Two-Column Grid with an Interactive Dropdown Button {#sec-interactive-dropdown}
 
 ::::{.sample-grid}
 :::{.col1}
@@ -102,18 +96,61 @@ Click button for dropdown options.
 :::
 ::::
 
+
 :::: {.collapse .attached-collapse id="collapse-1"}
 <p>Dropdown content goes here.</p>
 ::::
 
 <br>
 
+#### Code: 
+```{`markdown} 
+::::{.sample-grid}
+:::{.col1}
+This is a grid column with sample text.
+:::
+
+:::{.col2}
+Click button for dropdown options.
+
+<button class="arrow-toggle" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+    <svg class="chevron-icon"><use href="#icon-chevron-down"></use></svg>
+</button>
+
+:::
+::::
+
+
+:::: {.collapse .attached-collapse id="collapse-1"}
+<p>Dropdown content goes here.</p>
+::::
+```
+
+#### How it Works:
+
+
 1. **Define the grid layout**
 - An outer container is defined using `.sample-grid` CSS class which contains two columnar sections, `.col1` and `.col2`.
+```{markdown}
+```{`markdown} 
+::::{.sample-grid}
+:::{.col1}
+
+:::
+
+:::{.col2}
+
+:::
+::::
+```
+
+
 
 2. **Create an icon for dropdown arrow**
 - [Font Awesome](https://fontawesome.com/) is used to create the chevron icons (both upwards and downwards) for the dropdown button.
 - The SVG symbol is defined in the `<svg>` block within the `include-in-header` section of the Quarto YAML front matter and can be identified globally using the `id` attribute (e.g., `icon-chevron-down`).
+
+
 
 3. **Add a toggle button**
 - A custom `.arrow-toggle` class is used to style the button in the second column (`.col2`).
@@ -121,6 +158,12 @@ Click button for dropdown options.
 - `aria-expanded` attribute controls whether dropdown is expanded (`true`) or collapsed (`false`). The button also includes `aria-controls` attribute containing the `id` of the collapsible element (e.g., `"collapse-1"`).
 - The button has an SVG chevron icon (`.chevron-icon`) that visually indicates toggle state to the end user.
 - Chevron icon's SVG symbol is instantiated by the `<use>` element containing the `href` attribute pointed to the `id` of the symbol defined earlier (e.g., `#icon-chevron-down`).
+
+```{markdown}
+<button class="arrow-toggle" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+    <svg class="chevron-icon"><use href="#icon-chevron-down"></use></svg>
+</button>
+```
 
 4. **Define collapsible content**
 - The collapsible content is referenced with classes `.collapse` (in-built) and `.attached-collapse` (for styling).
@@ -130,6 +173,12 @@ Click button for dropdown options.
 - A JavaScript file containing customized functions to control CSS elements is added to the `include-in-header` section of the Quarto YAML front matter.
 - Whenever button (i.e. chevron icon) is clicked, custom JavaScript automatically changes the chevron icon (from up to down and vice versa) to show the toggle state of the collapsible element. 
 
+```{markdown}
+
+:::: {.collapse .attached-collapse id="collapse-1"}
+<p>Dropdown content goes here.</p>
+::::
+```
 
 
 ### Accordion-style dropdown with button
@@ -185,7 +234,7 @@ generate_cards()
 <br>
 
 1. **Create dropdown button hiding a collapsible element**
-- Follow the steps detailed in (example 2.1)[#interactive-dropdown] above.
+- Follow the steps detailed in @sec-interactive-dropdown above.
 
 2. **Add accordion style collapsible element**
 - For the collaspible element with `id="collapse-2"`, multiple accordion style `.card` elements are created using a Python function.
