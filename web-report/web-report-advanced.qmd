@@ -4,7 +4,7 @@ author-title: "Authors"
 authors: "Ridhi Purohit"
 affiliation: "Urban Institute"
 date: today
-abstract: "This document demonstrates advanced interactive components, such as dropdowns, tooltips, and dynamic visualizations, developed using Quarto and enhanced with custom CSS and JavaScript."
+abstract: "This document demonstrates advanced interactive components, such as dropdowns, tooltips, and dynamic visualizations developed using Quarto and enhanced with custom CSS and JavaScript."
 format:
   html:
     theme: urbn.scss
@@ -73,7 +73,10 @@ Quarto provides many interactive features out of the box that are useful in crea
 
 Quarto uses Bootstrap 5 for rendering HTML documents. This opens a pathway to enhance some of Quarto's built-in interactive features, which are based on Bootstrap, and also leverage additional Bootstrap components like dropdowns, buttons, accordions, and tooltips.
 
-> **What is Bootstrap?** Bootstrap is a front-end framework designed for building responsive websites, using a combination of HTML, CSS, and JavaScript components. It exposes various CSS classes that can be used as-is or customized per a user's requirements. With JavaScript, you can add dynamic features to your Bootstrap CSS components and have more fine-grained control over how the interactive elements work in your Quarto report. 
+::: {.callout-note}
+### What is Bootstrap?
+Bootstrap is a front-end framework designed for building responsive websites, using a combination of HTML, CSS, and JavaScript components. It exposes various CSS classes that can be used as-is or customized per a user's requirements. With JavaScript, you can add dynamic features to your Bootstrap CSS components and have more fine-grained control over how the interactive elements work in your Quarto report. 
+:::
 
 By combining Quarto's document authoring capabilities with custom CSS and JavaScript, you can deliver highly responsive and tailored web reports for your audience.
 
