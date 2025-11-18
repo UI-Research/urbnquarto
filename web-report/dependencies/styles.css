@@ -111,6 +111,7 @@ a {
 
 /* Tooltips */
 .custom-tooltip {
+  cursor: pointer;
   background-color: transparent;
   display: flex;
   position: relative;

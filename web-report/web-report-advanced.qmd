@@ -5,12 +5,12 @@ authors: "Ridhi Purohit"
 affiliation: "Urban Institute"
 date: today
 abstract: "This document demonstrates advanced interactive components, such as dropdowns, tooltips, and dynamic visualizations developed using Quarto and enhanced with custom CSS and JavaScript."
+bibliography: refs.bib
+csl: https://pandoc.org/demo/ieee.csl
 format:
   html:
     theme: urbn.scss
     css: dependencies/styles.css
-    self-contained: true
-    code-fold: true
     code-line-numbers: true
     html-math-method: katex
     df-print: default
@@ -23,39 +23,35 @@ format:
     embed-resources: true
     link-external-newwindow: true
     include-in-header:
-            # </svg>
-            # </svg>
         - text: |
             <script src="dependencies/dynamic-ops.js"></script>
-                </symbol>
-            </svg>
-            
-                </symbol>
-            </svg>
-            </svg>
+                
             <svg style="display:none;">
                 <symbol id="icon-chevron-up"
-                </symbol>
                     xmlns="http://www.w3.org/2000/svg" 
                     viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/>
-            <svg style="display:none;">
+                </symbol>
+                
                 <symbol id="icon-chevron-down"
                     xmlns="http://www.w3.org/2000/svg" 
                     viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
-            <svg  style="display:none;">
-                <symbol id="icon-info-circle"
                 </symbol>
+            
+                <symbol id="icon-info-circle"
                     xmlns="http://www.w3.org/2000/svg" 
                     viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
-            <svg style="display:none;">
-                <symbol id="icon-toggle-on"
                 </symbol>
+
+                <symbol id="icon-toggle-on"
                     xmlns="http://www.w3.org/2000/svg" 
                     viewBox="0 0 576 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M192 64C86 64 0 150 0 256S86 448 192 448l192 0c106 0 192-86 192-192S490 64 384 64L192 64zm192 96a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/>
-            <svg style="display:none;">
+                </symbol>
+            
                 <symbol id="icon-toggle-off"
                     xmlns="http://www.w3.org/2000/svg" 
                     viewBox="0 0 576 512"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M384 128c70.7 0 128 57.3 128 128S454.7 384 384 384l-192 0c-70.7 0-128-57.3-128-128s57.3-128 128-128l192 0zM576 256c0-106-86-192-192-192L192 64C86 64 0 150 0 256S86 448 192 448l192 0c106 0 192-86 192-192zM192 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/>
+                </symbol>
+            </svg>
 execute:
   engine: jupyter
   echo: false      
@@ -67,6 +63,8 @@ editor_options:
 
 ## Customized interactive web reports
 
+*This document assumes basic familiarity with HTML, CSS, and JS. For an introduction, see these resources: Intro to HTML[@IntroHTML], Intro to DOM scripting using JavaScript[@IntroDOM], The HTML DOM Model[@HTMLDOM].*
+
 ### Why use custom CSS and JavaScript when Quarto has built-in interactivity?
 
 Quarto provides many interactive features out of the box that are useful in creating web reports such as tabsets, table of contents, and support for interactive widgets like callouts, collapsible blocks, cards etc. However, incorporating CSS and JavaScript allows you to develop reports with custom interactivity and dynamic behaviors that go beyond the built-in options. For example, you can create custom dropdowns, tooltips, and visualizations that respond to user input in real time.
@@ -75,14 +73,14 @@ Quarto uses Bootstrap 5 for rendering HTML documents. This opens a pathway to en
 
 ::: {.callout-note}
 ### What is Bootstrap?
-Bootstrap is a front-end framework designed for building responsive websites, using a combination of HTML, CSS, and JavaScript components. It exposes various CSS classes that can be used as-is or customized per a user's requirements. With JavaScript, you can add dynamic features to your Bootstrap CSS components and have more fine-grained control over how the interactive elements work in your Quarto report. 
+Bootstrap[@bootstrap] is a front-end framework designed for building responsive websites, using a combination of HTML, CSS, and JavaScript components. It exposes various CSS classes that can be used as-is or customized per a user's requirements. With JavaScript, you can add dynamic features to your Bootstrap CSS components and have more fine-grained control over how the interactive elements work in your Quarto report. 
 :::
 
-By combining Quarto's document authoring capabilities with custom CSS and JavaScript, you can deliver highly responsive and tailored web reports for your audience.
+By combining Quarto's document authoring capabilities with custom CSS and JavaScript, you can deliver highly responsive and tailored web reports for your audience.[^2]
 
 ## Examples
 
-### Two-Column Grid with an Interactive Dropdown Button {#sec-interactive-dropdown}
+### Two-column grid with an interactive dropdown button {#sec-interactive-dropdown}
 
 ::::{.sample-grid}
 :::{.col1}
@@ -98,7 +96,6 @@ Click button for dropdown options.
 
 :::
 ::::
-
 
 :::: {.collapse .attached-collapse id="collapse-1"}
 <p>Dropdown content goes here.</p>
@@ -107,7 +104,7 @@ Click button for dropdown options.
 <br>
 
 #### Code: 
-```{`markdown} 
+```{.html filename="Two-column grid with an interactive dropdown button"} 
 ::::{.sample-grid}
 :::{.col1}
 This is a grid column with sample text.
@@ -123,19 +120,17 @@ Click button for dropdown options.
 :::
 ::::
 
-
 :::: {.collapse .attached-collapse id="collapse-1"}
 <p>Dropdown content goes here.</p>
 ::::
 ```
 
-#### How it Works:
-
+#### How it works:
 
 1. **Define the grid layout**
-- An outer container is defined using `.sample-grid` CSS class which contains two columnar sections, `.col1` and `.col2`.
+- An outer container is defined in Quarto Markdown using `.sample-grid` CSS class which contains two columnar sections, `.col1` and `.col2`.
+
 ```{markdown}
-```{`markdown} 
 ::::{.sample-grid}
 :::{.col1}
 
@@ -148,18 +143,15 @@ Click button for dropdown options.
 ```
 
 
-
 2. **Create an icon for dropdown arrow**
-- [Font Awesome](https://fontawesome.com/) is used to create the chevron icons (both upwards and downwards) for the dropdown button.
-- The SVG symbol is defined in the `<svg>` block within the `include-in-header` section of the Quarto YAML front matter and can be identified globally using the `id` attribute (e.g., `icon-chevron-down`).
-
-
+- Font Awesome[@FontAwesome], an open source[@FontAwesomeLicense] icon library, is used to create the chevron (v-shaped arrow) icons (both upwards[@chevronUp] and downwards[@chevronDown]) for the dropdown button.
+- The SVG symbol is defined in the `<svg>` block within the `include-in-header`[@quartoIncludeInHeader] section of the Quarto YAML front matter and can be identified globally using the `id` attribute (e.g., `icon-chevron-down`).
 
 3. **Add a toggle button**
 - A custom `.arrow-toggle` class is used to style the button in the second column (`.col2`).
-- The button uses Bootstrap's `data-bs-toggle="collapse"` and `data-bs-target="#collapse-1"` attributes to toggle the visibility of the dropdown content using built-in JavaScript functionality.
+- The button uses Bootstrap's `data-bs-toggle="collapse"` and `data-bs-target="#collapse-1"` attributes[@BootstrapCollapse] to toggle the visibility of the dropdown content using built-in JavaScript functionality.
 - `aria-expanded` attribute controls whether dropdown is expanded (`true`) or collapsed (`false`). The button also includes `aria-controls` attribute containing the `id` of the collapsible element (e.g., `"collapse-1"`).
-- The button has an SVG chevron icon (`.chevron-icon`) that visually indicates toggle state to the end user.
+- The button has an SVG chevron icon (`.chevron-icon`) that visually indicates toggle state to the end user by moving up/down whenever user clicks it.
 - Chevron icon's SVG symbol is instantiated by the `<use>` element containing the `href` attribute pointed to the `id` of the symbol defined earlier (e.g., `#icon-chevron-down`).
 
 ```{markdown}
@@ -172,16 +164,15 @@ Click button for dropdown options.
 - The collapsible content is referenced with classes `.collapse` (in-built) and `.attached-collapse` (for styling).
 - `id="collapse-1"` matches the button's `data-bs-target` attribute so that when button is clicked, content in this block is toggled.
 
-5. **Control interactivity with custom JavaScript**
-- A JavaScript file containing customized functions to control CSS elements is added to the `include-in-header` section of the Quarto YAML front matter.
-- Whenever button (i.e. chevron icon) is clicked, custom JavaScript automatically changes the chevron icon (from up to down and vice versa) to show the toggle state of the collapsible element. 
-
 ```{markdown}
-
 :::: {.collapse .attached-collapse id="collapse-1"}
 <p>Dropdown content goes here.</p>
 ::::
 ```
+
+5. **Control interactivity with custom JavaScript**
+- A JavaScript file containing customized functions to control CSS elements is added to the `include-in-header` section of the Quarto YAML front matter.
+- Whenever button (i.e. chevron icon) is clicked, custom JavaScript automatically changes the chevron icon (from up to down and vice versa) to show the toggle state of the collapsible element. 
 
 
 ### Accordion-style dropdown with button
@@ -236,14 +227,108 @@ generate_cards()
 
 <br>
 
+#### Code: 
+
+~~~{.markdown filename="Two-Column Grid with an Interactive Dropdown Button"} 
+<!-- Declare a Python function to generate customized cards with a collapsible element -->
+
+```{{python}}
+from IPython.display import display, Markdown
+
+def generate_cards(n=3):
+    """
+    Generates `n` number of `.card` HTML elements.
+    """
+    for i in range(n):
+
+        display_md = f"""
+::: {{.card .custom-card id="card-{i+1}"}}
+<strong>Card {i+1}</strong>
+<p>This is a sample card.</p>
+
+<a href="#" data-bs-toggle="collapse" data-bs-target="#additional-collapse-{i+1}" aria-expanded="false" aria-controls="additional-collapse-{i+1}" class="measure-link">Click here to see more details.</a>
+
+:::{{.collapse id="additional-collapse-{i+1}"}}
+<p>Additional content for Card {i+1} goes here.</p>
+:::
+
+:::
+"""
+        display(Markdown(display_md))
+```
+
+<!-- Quarto Markdown to create a grid with a dropdown button -->
+
+::::{.sample-grid}
+:::{.col1}
+This is a grid column with sample text.
+:::
+
+:::{.col2}
+Click button for dropdown options.
+
+<button class="arrow-toggle" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+    <svg class="chevron-icon"><use href="#icon-chevron-down"></use></svg>
+</button>
+
+:::
+::::
+
+:::: {.collapse .attached-collapse id="collapse-2"}
+
+<!-- Call a Python function for generating card within the collapse -->
+
+```{{python}}
+generate_cards()
+```
+::::
+
+~~~
+
+#### How it works:
+
 1. **Create dropdown button hiding a collapsible element**
 - Follow the steps detailed in @sec-interactive-dropdown above.
 
 2. **Add accordion style collapsible element**
-- For the collaspible element with `id="collapse-2"`, multiple accordion style `.card` elements are created using a Python function.
-- `generate_cards()` function creates `n` Quarto `.card` elements which are styled using `custom-card` class.
-- Within each card element, an additional Bootstrap based collapse is added using the hyperlink `<a>` tag containing    `data-bs-toggle="collapse"` and `data-bs-target` attributes. 
+- For the collaspible element with `id="collapse-2"`, multiple accordion style `.card` elements are created using a Python function.[^1]
+~~~{.markdown}
+:::: {.collapse .attached-collapse id="collapse-2"}
+
+<!-- Call a Python function for generating card within the collapse -->
+
+```{{python}}
+generate_cards()
+```
+::::
+~~~
+- `generate_cards()` function creates `n` Quarto `.card` elements which are styled using `custom-card` class defined in `styles.css`.
+- Within each card element, an additional Bootstrap based collapse is added using the hyperlink `<a>` tag containing `data-bs-toggle="collapse"` and `data-bs-target` attributes[@BootstrapCollapse]. 
 - In `generate_cards()` function, the `display` function from `IPython.display` is used to render the generated Markdown in the Quarto document.
+```{{python}}
+from IPython.display import display, Markdown
+
+def generate_cards(n=3):
+    """
+    Generates `n` number of `.card` HTML elements.
+    """
+    for i in range(n):
+
+        display_md = f"""
+::: {{.card .custom-card id="card-{i+1}"}}
+<strong>Card {i+1}</strong>
+<p>This is a sample card.</p>
+
+<a href="#" data-bs-toggle="collapse" data-bs-target="#additional-collapse-{i+1}" aria-expanded="false" aria-controls="additional-collapse-{i+1}" class="measure-link">Click here to see more details.</a>
+
+:::{{.collapse id="additional-collapse-{i+1}"}}
+<p>Additional content for Card {i+1} goes here.</p>
+:::
+
+:::
+"""
+        display(Markdown(display_md))
+```
 
 ### Custom tooltip with overlay
 
@@ -266,18 +351,59 @@ This is an informative tooltip.
 
 <br> 
 
+#### Code: 
+
+```{.html filename="Custom tooltip with overlay"} 
+::::{.sample-grid-2}
+This is an informative tooltip.
+
+<span class="custom-tooltip">
+  <span class="custom-tooltip-trigger">
+    <svg><use href="#icon-info-circle"></use></svg>
+  </span>
+  <span class="custom-tooltiptext">
+    <span class="custom-tooltip-close">✖</span>
+    <strong>Tooltip Text</strong><p>This sample text is displayed when tooltip icon is clicked. Click on the cross button to close the tooltip.</p>    
+  </span>
+</span>
+
+::::
+
+<div class="tooltip-overlay"></div>
+```
+
+#### How it works:
+
 1. **Define the grid layout**
 - An outer container is defined using `.sample-grid-2` CSS class.
+```{markdown}
+::::{.sample-grid-2}
 
+::::
+```
 2. **Create custom tooltip**
 - The tooltip is styled using `custom-tooltip` class.
-- The `custom-tooltip-trigger` class contains an SVG icon, `icon-info-circle`, which acts as the clickable element to display the tooltip content.
+- The `custom-tooltip-trigger` class contains an SVG icon, `icon-info-circle`[@InfoCircle], which acts as the clickable element to display the tooltip content.
 - The tooltip content is defined within the `custom-tooltiptext` element which is configured to be hidden by default using CSS. When user clicks the trigger icon then the content inside  `custom-tooltiptext` becomes visible.
 - A close button (`custom-tooltip-close`) is included within the tooltip text which allows the user to close the tooltip when it's visible.
+```{markdown}
+<span class="custom-tooltip">
+  <span class="custom-tooltip-trigger">
+    <svg><use href="#icon-info-circle"></use></svg>
+  </span>
+  <span class="custom-tooltiptext">
+    <span class="custom-tooltip-close">✖</span>
+    <strong>Tooltip Text</strong><p>This sample text is displayed when tooltip icon is clicked. Click on the cross button to close the tooltip.</p>    
+  </span>
+</span>
+```
 
 3. **Add an overlay**
 - Whenever tooltip is displayed, the background is greyed out by adding an overlay using the custom `tooltip-overlay` class.
 - The tooltip overlay is otherwise hidden by default.
+```{markdown}
+<div class="tooltip-overlay"></div>
+```
 
 4. **Control interactivity with custom JavaScript**
 - A JavaScript file containing customized functions to control CSS elements is added to the `include-in-header` section of the Quarto YAML front matter.
@@ -305,16 +431,54 @@ This is an informative tooltip.
 
 <br> 
 
+#### Code: 
+
+```{.html filename="Toggle button"} 
+::::{.sample-grid-2 style="display: block"}
+
+<span>
+    <button class="btn chart-toggle" type="button" data-toggle-id="1">
+        <svg class="chart-toggle-button"><use href="#icon-toggle-on"></use></svg>
+    </button>
+    <span class="chart-button-text" id="turn-on-text-1" style="display: none;">Turn on floors and targets</span>
+    <span class="chart-button-text" id="turn-off-text-1" style="display: inline ;">Turn off floors and targets</span>
+</span>
+
+<!-- Load locally stored chart image with/without floors and targets-->         
+<img src="dependencies/images/chart.svg" width="640" id="chart-without-1" style="display: none;"/><img src="dependencies/images/chart_with_floors_targets.svg" width="640" id="chart-with-floors-targets-1" style="display: block;"/>
+
+::::
+```
+
+#### How it works:
+
 1. **Define the grid layout**
 - An outer container is defined using `.sample-grid-2` CSS class.
+```{markdown} 
+::::{.sample-grid-2 style="display: block"}
+
+::::
+```
 
 2. **Create custom toggle**
 - The toggle is a button styled using `chart-toggle`, containing an SVG icon. It exposes a data attribute (`data-toggle-id`) identifying the chart controlled by the toggle and linking the button to corresponding images and button state text.
 - `chart-button-text` class is used to style the informative text displayed with the toggle button that indicates the toggle state. An `id` attribute is added to the `<span>` containing this class so that JavaScript code can identify and control the text displayed given the toggle button's state.
+```{markdown} 
+<span>
+    <button class="btn chart-toggle" type="button" data-toggle-id="1">
+        <svg class="chart-toggle-button"><use href="#icon-toggle-on"></use></svg>
+    </button>
+    <span class="chart-button-text" id="turn-on-text-1" style="display: none;">Turn on floors and targets</span>
+    <span class="chart-button-text" id="turn-off-text-1" style="display: inline ;">Turn off floors and targets</span>
+</span>
+```
 
 3. **Add images to be toggled**
 - Two `<img>` tags are defined containing bar chart images with and without floors & targets. 
 - An `id` attribute is added to the images so that JavaScript code can identify the image to display based on the toggle button state. `id="turn-on-text-1"`  contains a reference to the ID value in `data-toggle-id="1"`. All button related IDs reference `data-toggle-id="1"` for continuity.
+```{markdown} 
+<img src="dependencies/images/chart.svg" width="640" id="chart-without-1" style="display: none;"/><img src="dependencies/images/chart_with_floors_targets.svg" width="640" id="chart-with-floors-targets-1" style="display: block;"/>
+```
 
 4. **Control interactivity with custom JavaScript**
 -  A JavaScript file containing customized functions to control CSS elements is added to the `include-in-header` section of the Quarto YAML front matter.
@@ -325,4 +489,12 @@ This is an informative tooltip.
 - The HTML and JavaScript code is designed to work in tandem using the HTML attribute `data-toggle-id` which JavaScript accesses using `this.dataset.toggleId` attribute. 
 - By associating a toggle button with a unique `data-toggle-id` ID and using the ID to identify its related elements, we can control the interactivity of these elements through JavaScript.
 
-> **Note:** The `data-toggle-id` attribute is a user defined 1`data-*` attribute and is accessible as a `element.dataset.toggleId` element by JavaScript (hyphenated names map to camelCase).
+> **Note:** The `data-toggle-id` attribute is a user defined `data-*` attribute and is accessible as a `element.dataset.toggleId` element by JavaScript (hyphenated names map to camelCase).
+
+## References
+
+::: {#refs}
+:::
+
+[^1]: Analogous code can be written in R. A good place to start would be [this example](https://bookdown.org/yihui/rmarkdown-cookbook/results-asis.html) which leverages a combination of `asis` and cat. Note that this example is for RMarkdown and not Quarto, so, for Quarto, updates may be necessary. 
+[^2]: Bootstrap components can also be used in `shiny` with the help of the `bslib` package as [this example](https://shiny.posit.co/blog/posts/bslib-dashboards/) shows.
