@@ -242,7 +242,7 @@ def generate_cards(n=3):
     for i in range(n):
 
         display_md = f"""
-::: {{.card .custom-card id="card-{i+1}"}}
+::: {{.card .custom-card id='card-{i+1}'}}
 <strong>Card {i+1}</strong>
 <p>This is a sample card.</p>
 
