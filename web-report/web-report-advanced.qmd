@@ -104,7 +104,6 @@ Click button for dropdown options.
 <br>
 
 #### Code: 
-{% raw %}
 ```{.html filename="Two-column grid with an interactive dropdown button"} 
 ::::{.sample-grid}
 :::{.col1}
@@ -125,7 +124,6 @@ Click button for dropdown options.
 <p>Dropdown content goes here.</p>
 ::::
 ```
-{% endraw %}
 
 #### How it works:
 
@@ -230,7 +228,7 @@ generate_cards()
 <br>
 
 #### Code: 
-{% raw %}
+
 ~~~{.markdown filename="Two-Column Grid with an Interactive Dropdown Button"} 
 <!-- Declare a Python function to generate customized cards with a collapsible element -->
 
@@ -244,7 +242,7 @@ def generate_cards(n=3):
     for i in range(n):
 
         display_md = f"""
-::: {{.card .custom-card id="card-{i+1}"}}
+::: \{\{.card .custom-card id="card-{i+1}"\}\}
 <strong>Card {i+1}</strong>
 <p>This is a sample card.</p>
 
@@ -258,7 +256,6 @@ def generate_cards(n=3):
 """
         display(Markdown(display_md))
 ```
-{% endraw %}
 
 <!-- Quarto Markdown to create a grid with a dropdown button -->
 
@@ -355,7 +352,7 @@ This is an informative tooltip.
 <br> 
 
 #### Code: 
-{% raw %}
+
 ```{.html filename="Custom tooltip with overlay"} 
 ::::{.sample-grid-2}
 This is an informative tooltip.
@@ -374,7 +371,6 @@ This is an informative tooltip.
 
 <div class="tooltip-overlay"></div>
 ```
-{% endraw %}
 
 #### How it works:
 
@@ -436,7 +432,7 @@ This is an informative tooltip.
 <br> 
 
 #### Code: 
-{% raw %}
+
 ```{.html filename="Toggle button"} 
 ::::{.sample-grid-2 style="display: block"}
 
@@ -453,7 +449,6 @@ This is an informative tooltip.
 
 ::::
 ```
-{% endraw %}
 
 #### How it works:
 
