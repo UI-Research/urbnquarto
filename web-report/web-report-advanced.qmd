@@ -187,13 +187,13 @@ def generate_cards(n=3):
     for i in range(n):
 
         display_md = f"""
-::: {{.card .custom-card id="card-{i+1}"}}
+::: {{.card .custom-card id='card-{i+1}'}}
 <strong>Card {i+1}</strong>
 <p>This is a sample card.</p>
 
 <a href="#" data-bs-toggle="collapse" data-bs-target="#additional-collapse-{i+1}" aria-expanded="false" aria-controls="additional-collapse-{i+1}" class="measure-link">Click here to see more details.</a>
 
-:::{{.collapse id="additional-collapse-{i+1}"}}
+:::{{.collapse id='additional-collapse-{i+1}'}}
 <p>Additional content for Card {i+1} goes here.</p>
 :::
 
@@ -315,13 +315,13 @@ def generate_cards(n=3):
     for i in range(n):
 
         display_md = f"""
-::: {{.card .custom-card id="card-{i+1}"}}
+::: {{.card .custom-card id='card-{i+1}'}}
 <strong>Card {i+1}</strong>
 <p>This is a sample card.</p>
 
 <a href="#" data-bs-toggle="collapse" data-bs-target="#additional-collapse-{i+1}" aria-expanded="false" aria-controls="additional-collapse-{i+1}" class="measure-link">Click here to see more details.</a>
 
-:::{{.collapse id="additional-collapse-{i+1}"}}
+:::{{.collapse id='additional-collapse-{i+1}'}}
 <p>Additional content for Card {i+1} goes here.</p>
 :::
 
