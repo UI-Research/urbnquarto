@@ -2401,6 +2401,7 @@ Dropdown content goes here.
 <p><br></p>
 <section id="code" class="level4">
 <h4 data-anchor-id="code">Code:</h4>
+<p>{% raw %}</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Two-column grid with an interactive dropdown button</strong></pre>
@@ -2424,6 +2425,7 @@ Dropdown content goes here.
 <span id="cb1-17"><a href="#cb1-17"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Dropdown content goes here.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
 <span id="cb1-18"><a href="#cb1-18"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>{% endraw %}</p>
 </section>
 <section id="how-it-works" class="level4">
 <h4 data-anchor-id="how-it-works">How it works:</h4>
@@ -2497,7 +2499,7 @@ Dropdown content goes here.
 </div>
 </div>
 <div id="collapse-2" class="collapse attached-collapse">
-<div id="db4c557f" class="cell" data-execution_count="2">
+<div id="139902e1" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display cell-output-markdown">
 <div id="card-1" class="card custom-card">
 <strong>Card 1</strong>
@@ -2545,115 +2547,98 @@ Additional content for Card 3 goes here.
 <p><br></p>
 <section id="code-1" class="level4">
 <h4 data-anchor-id="code-1">Code:</h4>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Two-Column Grid with an Interactive Dropdown Button</strong></pre>
-</div>
-<div class="sourceCode" id="cb5" data-filename="Two-Column Grid with an Interactive Dropdown Button"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">&lt;!-- Declare a Python function to generate customized cards with a collapsible element --&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="in">```{python}</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="im">from</span> IPython.display <span class="im">import</span> display, Markdown</span>
-<span id="cb5-5"><a href="#cb5-5"></a></span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="kw">def</span> generate_cards(n<span class="op">=</span><span class="dv">3</span>):</span>
-<span id="cb5-7"><a href="#cb5-7"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="co">    Generates `n` number of `.card` HTML elements.</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
-<span id="cb5-11"><a href="#cb5-11"></a></span>
-<span id="cb5-12"><a href="#cb5-12"></a>        display_md <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb5-13"><a href="#cb5-13"></a><span class="ss">::: </span><span class="ch">{{</span><span class="ss">.card .custom-card id=&#39;card-</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&#39;</span><span class="ch">}}</span></span>
-<span id="cb5-14"><a href="#cb5-14"></a><span class="ss">&lt;strong&gt;Card </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&lt;/strong&gt;</span></span>
-<span id="cb5-15"><a href="#cb5-15"></a><span class="ss">&lt;p&gt;This is a sample card.&lt;/p&gt;</span></span>
+<p>{% raw %} ~~~{.markdown filename=“Two-Column Grid with an Interactive Dropdown Button”} <!-- Declare a Python function to generate customized cards with a collapsible element --></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="in">```{python}</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="im">from</span> IPython.display <span class="im">import</span> display, Markdown</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="kw">def</span> generate_cards(n<span class="op">=</span><span class="dv">3</span>):</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="co">    Generates `n` number of `.card` HTML elements.</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb5-9"><a href="#cb5-9"></a></span>
+<span id="cb5-10"><a href="#cb5-10"></a>        display_md <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="ss">::: </span><span class="ch">{{</span><span class="ss">.card .custom-card id=&quot;card-</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&quot;</span><span class="ch">}}</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="ss">&lt;strong&gt;Card </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&lt;/strong&gt;</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="ss">&lt;p&gt;This is a sample card.&lt;/p&gt;</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a></span>
+<span id="cb5-15"><a href="#cb5-15"></a><span class="ss">&lt;a href=&quot;#&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#additional-collapse-</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;additional-collapse-</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&quot; class=&quot;measure-link&quot;&gt;Click here to see more details.&lt;/a&gt;</span></span>
 <span id="cb5-16"><a href="#cb5-16"></a></span>
-<span id="cb5-17"><a href="#cb5-17"></a><span class="ss">&lt;a href=&quot;#&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#additional-collapse-</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;additional-collapse-</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&quot; class=&quot;measure-link&quot;&gt;Click here to see more details.&lt;/a&gt;</span></span>
-<span id="cb5-18"><a href="#cb5-18"></a></span>
-<span id="cb5-19"><a href="#cb5-19"></a><span class="ss">:::</span><span class="ch">{{</span><span class="ss">.collapse id=&quot;additional-collapse-</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&quot;</span><span class="ch">}}</span></span>
-<span id="cb5-20"><a href="#cb5-20"></a><span class="ss">&lt;p&gt;Additional content for Card </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss"> goes here.&lt;/p&gt;</span></span>
+<span id="cb5-17"><a href="#cb5-17"></a><span class="ss">:::</span><span class="ch">{{</span><span class="ss">.collapse id=&quot;additional-collapse-</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&quot;</span><span class="ch">}}</span></span>
+<span id="cb5-18"><a href="#cb5-18"></a><span class="ss">&lt;p&gt;Additional content for Card </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss"> goes here.&lt;/p&gt;</span></span>
+<span id="cb5-19"><a href="#cb5-19"></a><span class="ss">:::</span></span>
+<span id="cb5-20"><a href="#cb5-20"></a></span>
 <span id="cb5-21"><a href="#cb5-21"></a><span class="ss">:::</span></span>
-<span id="cb5-22"><a href="#cb5-22"></a></span>
-<span id="cb5-23"><a href="#cb5-23"></a><span class="ss">:::</span></span>
-<span id="cb5-24"><a href="#cb5-24"></a><span class="ss">&quot;&quot;&quot;</span></span>
-<span id="cb5-25"><a href="#cb5-25"></a>        display(Markdown(display_md))</span>
-<span id="cb5-26"><a href="#cb5-26"></a><span class="in">```</span></span>
-<span id="cb5-27"><a href="#cb5-27"></a></span>
-<span id="cb5-28"><a href="#cb5-28"></a><span class="co">&lt;!-- Quarto Markdown to create a grid with a dropdown button --&gt;</span></span>
-<span id="cb5-29"><a href="#cb5-29"></a></span>
-<span id="cb5-30"><a href="#cb5-30"></a>::::{.sample-grid}</span>
-<span id="cb5-31"><a href="#cb5-31"></a>:::{.col1}</span>
-<span id="cb5-32"><a href="#cb5-32"></a>This is a grid column with sample text.</span>
-<span id="cb5-33"><a href="#cb5-33"></a>:::</span>
-<span id="cb5-34"><a href="#cb5-34"></a></span>
-<span id="cb5-35"><a href="#cb5-35"></a>:::{.col2}</span>
-<span id="cb5-36"><a href="#cb5-36"></a>Click button for dropdown options.</span>
-<span id="cb5-37"><a href="#cb5-37"></a></span>
-<span id="cb5-38"><a href="#cb5-38"></a><span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;arrow-toggle&quot;</span><span class="ot"> data-bs-toggle</span><span class="op">=</span><span class="st">&quot;collapse&quot;</span><span class="ot"> data-bs-target</span><span class="op">=</span><span class="st">&quot;#collapse-2&quot;</span><span class="ot"> aria-expanded</span><span class="op">=</span><span class="st">&quot;false&quot;</span><span class="ot"> aria-controls</span><span class="op">=</span><span class="st">&quot;collapse-2&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb5-39"><a href="#cb5-39"></a>    <span class="dt">&lt;</span><span class="kw">svg</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;chevron-icon&quot;</span><span class="dt">&gt;&lt;</span><span class="kw">use</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;#icon-chevron-down&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">use</span><span class="dt">&gt;&lt;/</span><span class="kw">svg</span><span class="dt">&gt;</span></span>
-<span id="cb5-40"><a href="#cb5-40"></a><span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb5-41"><a href="#cb5-41"></a></span>
-<span id="cb5-42"><a href="#cb5-42"></a>:::</span>
-<span id="cb5-43"><a href="#cb5-43"></a>::::</span>
-<span id="cb5-44"><a href="#cb5-44"></a></span>
-<span id="cb5-45"><a href="#cb5-45"></a>:::: {.collapse .attached-collapse id=&quot;collapse-2&quot;}</span>
-<span id="cb5-46"><a href="#cb5-46"></a></span>
-<span id="cb5-47"><a href="#cb5-47"></a><span class="co">&lt;!-- Call a Python function for generating card within the collapse --&gt;</span></span>
-<span id="cb5-48"><a href="#cb5-48"></a></span>
-<span id="cb5-49"><a href="#cb5-49"></a><span class="in">```{python}</span></span>
-<span id="cb5-50"><a href="#cb5-50"></a>generate_cards()</span>
-<span id="cb5-51"><a href="#cb5-51"></a><span class="in">```</span></span>
-<span id="cb5-52"><a href="#cb5-52"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-22"><a href="#cb5-22"></a><span class="ss">&quot;&quot;&quot;</span></span>
+<span id="cb5-23"><a href="#cb5-23"></a>        display(Markdown(display_md))</span>
+<span id="cb5-24"><a href="#cb5-24"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>{% endraw %}</p>
+<!-- Quarto Markdown to create a grid with a dropdown button -->
+<div class="sample-grid">
+<div class="col1">
+<p>This is a grid column with sample text.</p>
 </div>
-</section>
-<section id="how-it-works-1" class="level4">
-<h4 data-anchor-id="how-it-works-1">How it works:</h4>
-<ol type="1">
-<li><strong>Create dropdown button hiding a collapsible element</strong></li>
-</ol>
-<ul>
-<li>Follow the steps detailed in <a href="#sec-interactive-dropdown" class="quarto-xref">Section 2.1</a> above.</li>
-</ul>
-<ol start="2" type="1">
-<li><strong>Add accordion style collapsible element</strong></li>
-</ol>
-<ul>
-<li>For the collaspible element with <code>id=&quot;collapse-2&quot;</code>, multiple accordion style <code>.card</code> elements are created using a Python function.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
-</ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a>:::: {.collapse .attached-collapse id=&quot;collapse-2&quot;}</span>
-<span id="cb6-2"><a href="#cb6-2"></a></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="co">&lt;!-- Call a Python function for generating card within the collapse --&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="in">```{python}</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a>generate_cards()</span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="in">```</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="col2">
+<p>Click button for dropdown options.</p>
+<button class="arrow-toggle" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+<svg class="chevron-icon">
+<use href="#icon-chevron-down" />
+</svg>
+</button>
+</div>
+</div>
+<div id="collapse-2" class="collapse attached-collapse">
+<!-- Call a Python function for generating card within the collapse -->
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a><span class="in">```{python}</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>generate_cards()</span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1"></a></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">#### How it works:</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="ss">1. </span>**Create dropdown button hiding a collapsible element**</span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="ss">- </span>Follow the steps detailed in @sec-interactive-dropdown above.</span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="ss">2. </span>**Add accordion style collapsible element**</span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="ss">- </span>For the collaspible element with <span class="in">`id=&quot;collapse-2&quot;`</span>, multiple accordion style <span class="in">`.card`</span> elements are created using a Python function.<span class="ot">[^1]</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="in">~~~{.markdown}</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>:::: {.collapse .attached-collapse id=&quot;collapse-2&quot;}</span>
+<span id="cb7-11"><a href="#cb7-11"></a></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="co">&lt;!-- Call a Python function for generating card within the collapse --&gt;</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a></span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="in">```{python}</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a>generate_cards()</span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="in">```</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><code>generate_cards()</code> function creates <code>n</code> Quarto <code>.card</code> elements which are styled using <code>custom-card</code> class defined in <code>styles.css</code>.</li>
 <li>Within each card element, an additional Bootstrap based collapse is added using the hyperlink <code>&lt;a&gt;</code> tag containing <code>data-bs-toggle=&quot;collapse&quot;</code> and <code>data-bs-target</code> attributes<span class="citation" data-cites="BootstrapCollapse"><a href="#ref-BootstrapCollapse" role="doc-biblioref">[10]</a></span>.</li>
 <li>In <code>generate_cards()</code> function, the <code>display</code> function from <code>IPython.display</code> is used to render the generated Markdown in the Quarto document.</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1"></a><span class="in">```{python}</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="im">from</span> IPython.display <span class="im">import</span> display, Markdown</span>
-<span id="cb7-3"><a href="#cb7-3"></a></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="kw">def</span> generate_cards(n<span class="op">=</span><span class="dv">3</span>):</span>
-<span id="cb7-5"><a href="#cb7-5"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="co">    Generates `n` number of `.card` HTML elements.</span></span>
-<span id="cb7-7"><a href="#cb7-7"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb7-8"><a href="#cb7-8"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
-<span id="cb7-9"><a href="#cb7-9"></a></span>
-<span id="cb7-10"><a href="#cb7-10"></a>        display_md <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
-<span id="cb7-11"><a href="#cb7-11"></a><span class="ss">::: </span><span class="ch">{{</span><span class="ss">.card .custom-card id=&#39;card-</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&#39;</span><span class="ch">}}</span></span>
-<span id="cb7-12"><a href="#cb7-12"></a><span class="ss">&lt;strong&gt;Card </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&lt;/strong&gt;</span></span>
-<span id="cb7-13"><a href="#cb7-13"></a><span class="ss">&lt;p&gt;This is a sample card.&lt;/p&gt;</span></span>
-<span id="cb7-14"><a href="#cb7-14"></a></span>
-<span id="cb7-15"><a href="#cb7-15"></a><span class="ss">&lt;a href=&quot;#&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#additional-collapse-</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;additional-collapse-</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&quot; class=&quot;measure-link&quot;&gt;Click here to see more details.&lt;/a&gt;</span></span>
-<span id="cb7-16"><a href="#cb7-16"></a></span>
-<span id="cb7-17"><a href="#cb7-17"></a><span class="ss">:::</span><span class="ch">{{</span><span class="ss">.collapse id=&#39;additional-collapse-</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&#39;</span><span class="ch">}}</span></span>
-<span id="cb7-18"><a href="#cb7-18"></a><span class="ss">&lt;p&gt;Additional content for Card </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss"> goes here.&lt;/p&gt;</span></span>
-<span id="cb7-19"><a href="#cb7-19"></a><span class="ss">:::</span></span>
-<span id="cb7-20"><a href="#cb7-20"></a></span>
-<span id="cb7-21"><a href="#cb7-21"></a><span class="ss">:::</span></span>
-<span id="cb7-22"><a href="#cb7-22"></a><span class="ss">&quot;&quot;&quot;</span></span>
-<span id="cb7-23"><a href="#cb7-23"></a>        display(Markdown(display_md))</span>
-<span id="cb7-24"><a href="#cb7-24"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1"></a><span class="in">```{python}</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="im">from</span> IPython.display <span class="im">import</span> display, Markdown</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="kw">def</span> generate_cards(n<span class="op">=</span><span class="dv">3</span>):</span>
+<span id="cb8-5"><a href="#cb8-5"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="co">    Generates `n` number of `.card` HTML elements.</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb8-9"><a href="#cb8-9"></a></span>
+<span id="cb8-10"><a href="#cb8-10"></a>        display_md <span class="op">=</span> <span class="ss">f&quot;&quot;&quot;</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="ss">::: </span><span class="ch">{{</span><span class="ss">.card .custom-card id=&quot;card-</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&quot;</span><span class="ch">}}</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="ss">&lt;strong&gt;Card </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&lt;/strong&gt;</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="ss">&lt;p&gt;This is a sample card.&lt;/p&gt;</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a></span>
+<span id="cb8-15"><a href="#cb8-15"></a><span class="ss">&lt;a href=&quot;#&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#additional-collapse-</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;additional-collapse-</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&quot; class=&quot;measure-link&quot;&gt;Click here to see more details.&lt;/a&gt;</span></span>
+<span id="cb8-16"><a href="#cb8-16"></a></span>
+<span id="cb8-17"><a href="#cb8-17"></a><span class="ss">:::</span><span class="ch">{{</span><span class="ss">.collapse id=&quot;additional-collapse-</span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">&quot;</span><span class="ch">}}</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a><span class="ss">&lt;p&gt;Additional content for Card </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss"> goes here.&lt;/p&gt;</span></span>
+<span id="cb8-19"><a href="#cb8-19"></a><span class="ss">:::</span></span>
+<span id="cb8-20"><a href="#cb8-20"></a></span>
+<span id="cb8-21"><a href="#cb8-21"></a><span class="ss">:::</span></span>
+<span id="cb8-22"><a href="#cb8-22"></a><span class="ss">&quot;&quot;&quot;</span></span>
+<span id="cb8-23"><a href="#cb8-23"></a>        display(Markdown(display_md))</span>
+<span id="cb8-24"><a href="#cb8-24"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="custom-tooltip-with-overlay" class="level3" data-number="2.3">
@@ -2672,39 +2657,41 @@ This sample text is displayed when tooltip icon is clicked. Click on the cross b
 <p><br></p>
 <section id="code-2" class="level4">
 <h4 data-anchor-id="code-2">Code:</h4>
+<p>{% raw %}</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Custom tooltip with overlay</strong></pre>
 </div>
-<div class="sourceCode" id="cb8" data-filename="Custom tooltip with overlay"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1"></a>::::{.sample-grid-2}</span>
-<span id="cb8-2"><a href="#cb8-2"></a>This is an informative tooltip.</span>
-<span id="cb8-3"><a href="#cb8-3"></a></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;custom-tooltip&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a>  <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;custom-tooltip-trigger&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a>    <span class="dt">&lt;</span><span class="kw">svg</span><span class="dt">&gt;&lt;</span><span class="kw">use</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;#icon-info-circle&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">use</span><span class="dt">&gt;&lt;/</span><span class="kw">svg</span><span class="dt">&gt;</span></span>
-<span id="cb8-7"><a href="#cb8-7"></a>  <span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a>  <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;custom-tooltiptext&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb8-9"><a href="#cb8-9"></a>    <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;custom-tooltip-close&quot;</span><span class="dt">&gt;</span>✖<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
-<span id="cb8-10"><a href="#cb8-10"></a>    <span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>Tooltip Text<span class="dt">&lt;/</span><span class="kw">strong</span><span class="dt">&gt;&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This sample text is displayed when tooltip icon is clicked. Click on the cross button to close the tooltip.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span>    </span>
-<span id="cb8-11"><a href="#cb8-11"></a>  <span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
-<span id="cb8-12"><a href="#cb8-12"></a><span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
-<span id="cb8-13"><a href="#cb8-13"></a></span>
-<span id="cb8-14"><a href="#cb8-14"></a>::::</span>
-<span id="cb8-15"><a href="#cb8-15"></a></span>
-<span id="cb8-16"><a href="#cb8-16"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;tooltip-overlay&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9" data-filename="Custom tooltip with overlay"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1"></a>::::{.sample-grid-2}</span>
+<span id="cb9-2"><a href="#cb9-2"></a>This is an informative tooltip.</span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;custom-tooltip&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>  <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;custom-tooltip-trigger&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a>    <span class="dt">&lt;</span><span class="kw">svg</span><span class="dt">&gt;&lt;</span><span class="kw">use</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;#icon-info-circle&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">use</span><span class="dt">&gt;&lt;/</span><span class="kw">svg</span><span class="dt">&gt;</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a>  <span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb9-8"><a href="#cb9-8"></a>  <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;custom-tooltiptext&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a>    <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;custom-tooltip-close&quot;</span><span class="dt">&gt;</span>✖<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a>    <span class="dt">&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>Tooltip Text<span class="dt">&lt;/</span><span class="kw">strong</span><span class="dt">&gt;&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This sample text is displayed when tooltip icon is clicked. Click on the cross button to close the tooltip.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span>    </span>
+<span id="cb9-11"><a href="#cb9-11"></a>  <span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb9-12"><a href="#cb9-12"></a><span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb9-13"><a href="#cb9-13"></a></span>
+<span id="cb9-14"><a href="#cb9-14"></a>::::</span>
+<span id="cb9-15"><a href="#cb9-15"></a></span>
+<span id="cb9-16"><a href="#cb9-16"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;tooltip-overlay&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>{% endraw %}</p>
 </section>
-<section id="how-it-works-2" class="level4">
-<h4 data-anchor-id="how-it-works-2">How it works:</h4>
+<section id="how-it-works-1" class="level4">
+<h4 data-anchor-id="how-it-works-1">How it works:</h4>
 <ol type="1">
 <li><strong>Define the grid layout</strong></li>
 </ol>
 <ul>
 <li>An outer container is defined using <code>.sample-grid-2</code> CSS class.</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource {markdown} number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href="#cb9-1"></a>::::{.sample-grid-2}</span>
-<span id="cb9-2"><a href="#cb9-2"></a></span>
-<span id="cb9-3"><a href="#cb9-3"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {markdown} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href="#cb10-1"></a>::::{.sample-grid-2}</span>
+<span id="cb10-2"><a href="#cb10-2"></a></span>
+<span id="cb10-3"><a href="#cb10-3"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="2" type="1">
 <li><strong>Create custom tooltip</strong></li>
 </ol>
@@ -2714,15 +2701,15 @@ This sample text is displayed when tooltip icon is clicked. Click on the cross b
 <li>The tooltip content is defined within the <code>custom-tooltiptext</code> element which is configured to be hidden by default using CSS. When user clicks the trigger icon then the content inside <code>custom-tooltiptext</code> becomes visible.</li>
 <li>A close button (<code>custom-tooltip-close</code>) is included within the tooltip text which allows the user to close the tooltip when it’s visible.</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource {markdown} number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href="#cb10-1"></a>&lt;span class=&quot;custom-tooltip&quot;&gt;</span>
-<span id="cb10-2"><a href="#cb10-2"></a>  &lt;span class=&quot;custom-tooltip-trigger&quot;&gt;</span>
-<span id="cb10-3"><a href="#cb10-3"></a>    &lt;svg&gt;&lt;use href=&quot;#icon-info-circle&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</span>
-<span id="cb10-4"><a href="#cb10-4"></a>  &lt;/span&gt;</span>
-<span id="cb10-5"><a href="#cb10-5"></a>  &lt;span class=&quot;custom-tooltiptext&quot;&gt;</span>
-<span id="cb10-6"><a href="#cb10-6"></a>    &lt;span class=&quot;custom-tooltip-close&quot;&gt;✖&lt;/span&gt;</span>
-<span id="cb10-7"><a href="#cb10-7"></a>    &lt;strong&gt;Tooltip Text&lt;/strong&gt;&lt;p&gt;This sample text is displayed when tooltip icon is clicked. Click on the cross button to close the tooltip.&lt;/p&gt;    </span>
-<span id="cb10-8"><a href="#cb10-8"></a>  &lt;/span&gt;</span>
-<span id="cb10-9"><a href="#cb10-9"></a>&lt;/span&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {markdown} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href="#cb11-1"></a>&lt;span class=&quot;custom-tooltip&quot;&gt;</span>
+<span id="cb11-2"><a href="#cb11-2"></a>  &lt;span class=&quot;custom-tooltip-trigger&quot;&gt;</span>
+<span id="cb11-3"><a href="#cb11-3"></a>    &lt;svg&gt;&lt;use href=&quot;#icon-info-circle&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</span>
+<span id="cb11-4"><a href="#cb11-4"></a>  &lt;/span&gt;</span>
+<span id="cb11-5"><a href="#cb11-5"></a>  &lt;span class=&quot;custom-tooltiptext&quot;&gt;</span>
+<span id="cb11-6"><a href="#cb11-6"></a>    &lt;span class=&quot;custom-tooltip-close&quot;&gt;✖&lt;/span&gt;</span>
+<span id="cb11-7"><a href="#cb11-7"></a>    &lt;strong&gt;Tooltip Text&lt;/strong&gt;&lt;p&gt;This sample text is displayed when tooltip icon is clicked. Click on the cross button to close the tooltip.&lt;/p&gt;    </span>
+<span id="cb11-8"><a href="#cb11-8"></a>  &lt;/span&gt;</span>
+<span id="cb11-9"><a href="#cb11-9"></a>&lt;/span&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="3" type="1">
 <li><strong>Add an overlay</strong></li>
 </ol>
@@ -2730,7 +2717,7 @@ This sample text is displayed when tooltip icon is clicked. Click on the cross b
 <li>Whenever tooltip is displayed, the background is greyed out by adding an overlay using the custom <code>tooltip-overlay</code> class.</li>
 <li>The tooltip overlay is otherwise hidden by default.</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource {markdown} number-lines code-with-copy"><code class="sourceCode"><span id="cb11-1"><a href="#cb11-1"></a>&lt;div class=&quot;tooltip-overlay&quot;&gt;&lt;/div&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource {markdown} number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a href="#cb12-1"></a>&lt;div class=&quot;tooltip-overlay&quot;&gt;&lt;/div&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="4" type="1">
 <li><strong>Control interactivity with custom JavaScript</strong></li>
 </ol>
@@ -2754,37 +2741,39 @@ This sample text is displayed when tooltip icon is clicked. Click on the cross b
 <p><br></p>
 <section id="code-3" class="level4">
 <h4 data-anchor-id="code-3">Code:</h4>
+<p>{% raw %}</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Toggle button</strong></pre>
 </div>
-<div class="sourceCode" id="cb12" data-filename="Toggle button"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1"></a>::::{.sample-grid-2 style=&quot;display: block&quot;}</span>
-<span id="cb12-2"><a href="#cb12-2"></a></span>
-<span id="cb12-3"><a href="#cb12-3"></a><span class="dt">&lt;</span><span class="kw">span</span><span class="dt">&gt;</span></span>
-<span id="cb12-4"><a href="#cb12-4"></a>    <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;btn chart-toggle&quot;</span><span class="ot"> type</span><span class="op">=</span><span class="st">&quot;button&quot;</span><span class="ot"> data-toggle-id</span><span class="op">=</span><span class="st">&quot;1&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a>        <span class="dt">&lt;</span><span class="kw">svg</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;chart-toggle-button&quot;</span><span class="dt">&gt;&lt;</span><span class="kw">use</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;#icon-toggle-on&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">use</span><span class="dt">&gt;&lt;/</span><span class="kw">svg</span><span class="dt">&gt;</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a>    <span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb12-7"><a href="#cb12-7"></a>    <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;chart-button-text&quot;</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;turn-on-text-1&quot;</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;display: none;&quot;</span><span class="dt">&gt;</span>Turn on floors and targets<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
-<span id="cb12-8"><a href="#cb12-8"></a>    <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;chart-button-text&quot;</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;turn-off-text-1&quot;</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;display: inline ;&quot;</span><span class="dt">&gt;</span>Turn off floors and targets<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a><span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
-<span id="cb12-10"><a href="#cb12-10"></a></span>
-<span id="cb12-11"><a href="#cb12-11"></a><span class="co">&lt;!-- Load locally stored chart image with/without floors and targets--&gt;</span>         </span>
-<span id="cb12-12"><a href="#cb12-12"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">&quot;dependencies/images/chart.svg&quot;</span><span class="ot"> width</span><span class="op">=</span><span class="st">&quot;640&quot;</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;chart-without-1&quot;</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;display: none;&quot;</span><span class="dt">/&gt;&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">&quot;dependencies/images/chart_with_floors_targets.svg&quot;</span><span class="ot"> width</span><span class="op">=</span><span class="st">&quot;640&quot;</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;chart-with-floors-targets-1&quot;</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;display: block;&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb12-13"><a href="#cb12-13"></a></span>
-<span id="cb12-14"><a href="#cb12-14"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13" data-filename="Toggle button"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb13-1"><a href="#cb13-1"></a>::::{.sample-grid-2 style=&quot;display: block&quot;}</span>
+<span id="cb13-2"><a href="#cb13-2"></a></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="dt">&lt;</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a>    <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;btn chart-toggle&quot;</span><span class="ot"> type</span><span class="op">=</span><span class="st">&quot;button&quot;</span><span class="ot"> data-toggle-id</span><span class="op">=</span><span class="st">&quot;1&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>        <span class="dt">&lt;</span><span class="kw">svg</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;chart-toggle-button&quot;</span><span class="dt">&gt;&lt;</span><span class="kw">use</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;#icon-toggle-on&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">use</span><span class="dt">&gt;&lt;/</span><span class="kw">svg</span><span class="dt">&gt;</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a>    <span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
+<span id="cb13-7"><a href="#cb13-7"></a>    <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;chart-button-text&quot;</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;turn-on-text-1&quot;</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;display: none;&quot;</span><span class="dt">&gt;</span>Turn on floors and targets<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb13-8"><a href="#cb13-8"></a>    <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;chart-button-text&quot;</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;turn-off-text-1&quot;</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;display: inline ;&quot;</span><span class="dt">&gt;</span>Turn off floors and targets<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb13-9"><a href="#cb13-9"></a><span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb13-10"><a href="#cb13-10"></a></span>
+<span id="cb13-11"><a href="#cb13-11"></a><span class="co">&lt;!-- Load locally stored chart image with/without floors and targets--&gt;</span>         </span>
+<span id="cb13-12"><a href="#cb13-12"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">&quot;dependencies/images/chart.svg&quot;</span><span class="ot"> width</span><span class="op">=</span><span class="st">&quot;640&quot;</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;chart-without-1&quot;</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;display: none;&quot;</span><span class="dt">/&gt;&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">&quot;dependencies/images/chart_with_floors_targets.svg&quot;</span><span class="ot"> width</span><span class="op">=</span><span class="st">&quot;640&quot;</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;chart-with-floors-targets-1&quot;</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;display: block;&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb13-13"><a href="#cb13-13"></a></span>
+<span id="cb13-14"><a href="#cb13-14"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>{% endraw %}</p>
 </section>
-<section id="how-it-works-3" class="level4">
-<h4 data-anchor-id="how-it-works-3">How it works:</h4>
+<section id="how-it-works-2" class="level4">
+<h4 data-anchor-id="how-it-works-2">How it works:</h4>
 <ol type="1">
 <li><strong>Define the grid layout</strong></li>
 </ol>
 <ul>
 <li>An outer container is defined using <code>.sample-grid-2</code> CSS class.</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource {markdown} number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1"><a href="#cb13-1"></a>::::{.sample-grid-2 style=&quot;display: block&quot;}</span>
-<span id="cb13-2"><a href="#cb13-2"></a></span>
-<span id="cb13-3"><a href="#cb13-3"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource {markdown} number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a href="#cb14-1"></a>::::{.sample-grid-2 style=&quot;display: block&quot;}</span>
+<span id="cb14-2"><a href="#cb14-2"></a></span>
+<span id="cb14-3"><a href="#cb14-3"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="2" type="1">
 <li><strong>Create custom toggle</strong></li>
 </ol>
@@ -2792,13 +2781,13 @@ This sample text is displayed when tooltip icon is clicked. Click on the cross b
 <li>The toggle is a button styled using <code>chart-toggle</code>, containing an SVG icon. It exposes a data attribute (<code>data-toggle-id</code>) identifying the chart controlled by the toggle and linking the button to corresponding images and button state text.</li>
 <li><code>chart-button-text</code> class is used to style the informative text displayed with the toggle button that indicates the toggle state. An <code>id</code> attribute is added to the <code>&lt;span&gt;</code> containing this class so that JavaScript code can identify and control the text displayed given the toggle button’s state.</li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource {markdown} number-lines code-with-copy"><code class="sourceCode"><span id="cb14-1"><a href="#cb14-1"></a>&lt;span&gt;</span>
-<span id="cb14-2"><a href="#cb14-2"></a>    &lt;button class=&quot;btn chart-toggle&quot; type=&quot;button&quot; data-toggle-id=&quot;1&quot;&gt;</span>
-<span id="cb14-3"><a href="#cb14-3"></a>        &lt;svg class=&quot;chart-toggle-button&quot;&gt;&lt;use href=&quot;#icon-toggle-on&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</span>
-<span id="cb14-4"><a href="#cb14-4"></a>    &lt;/button&gt;</span>
-<span id="cb14-5"><a href="#cb14-5"></a>    &lt;span class=&quot;chart-button-text&quot; id=&quot;turn-on-text-1&quot; style=&quot;display: none;&quot;&gt;Turn on floors and targets&lt;/span&gt;</span>
-<span id="cb14-6"><a href="#cb14-6"></a>    &lt;span class=&quot;chart-button-text&quot; id=&quot;turn-off-text-1&quot; style=&quot;display: inline ;&quot;&gt;Turn off floors and targets&lt;/span&gt;</span>
-<span id="cb14-7"><a href="#cb14-7"></a>&lt;/span&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource {markdown} number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1"><a href="#cb15-1"></a>&lt;span&gt;</span>
+<span id="cb15-2"><a href="#cb15-2"></a>    &lt;button class=&quot;btn chart-toggle&quot; type=&quot;button&quot; data-toggle-id=&quot;1&quot;&gt;</span>
+<span id="cb15-3"><a href="#cb15-3"></a>        &lt;svg class=&quot;chart-toggle-button&quot;&gt;&lt;use href=&quot;#icon-toggle-on&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</span>
+<span id="cb15-4"><a href="#cb15-4"></a>    &lt;/button&gt;</span>
+<span id="cb15-5"><a href="#cb15-5"></a>    &lt;span class=&quot;chart-button-text&quot; id=&quot;turn-on-text-1&quot; style=&quot;display: none;&quot;&gt;Turn on floors and targets&lt;/span&gt;</span>
+<span id="cb15-6"><a href="#cb15-6"></a>    &lt;span class=&quot;chart-button-text&quot; id=&quot;turn-off-text-1&quot; style=&quot;display: inline ;&quot;&gt;Turn off floors and targets&lt;/span&gt;</span>
+<span id="cb15-7"><a href="#cb15-7"></a>&lt;/span&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="3" type="1">
 <li><strong>Add images to be toggled</strong></li>
 </ol>
@@ -2806,7 +2795,7 @@ This sample text is displayed when tooltip icon is clicked. Click on the cross b
 <li>Two <code>&lt;img&gt;</code> tags are defined containing bar chart images with and without floors &amp; targets.</li>
 <li>An <code>id</code> attribute is added to the images so that JavaScript code can identify the image to display based on the toggle button state. <code>id=&quot;turn-on-text-1&quot;</code> contains a reference to the ID value in <code>data-toggle-id=&quot;1&quot;</code>. All button related IDs reference <code>data-toggle-id=&quot;1&quot;</code> for continuity.</li>
 </ul>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource {markdown} number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1"><a href="#cb15-1"></a>&lt;img src=&quot;dependencies/images/chart.svg&quot; width=&quot;640&quot; id=&quot;chart-without-1&quot; style=&quot;display: none;&quot;/&gt;&lt;img src=&quot;dependencies/images/chart_with_floors_targets.svg&quot; width=&quot;640&quot; id=&quot;chart-with-floors-targets-1&quot; style=&quot;display: block;&quot;/&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource {markdown} number-lines code-with-copy"><code class="sourceCode"><span id="cb16-1"><a href="#cb16-1"></a>&lt;img src=&quot;dependencies/images/chart.svg&quot; width=&quot;640&quot; id=&quot;chart-without-1&quot; style=&quot;display: none;&quot;/&gt;&lt;img src=&quot;dependencies/images/chart_with_floors_targets.svg&quot; width=&quot;640&quot; id=&quot;chart-with-floors-targets-1&quot; style=&quot;display: block;&quot;/&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="4" type="1">
 <li><strong>Control interactivity with custom JavaScript</strong></li>
 </ol>
@@ -2869,7 +2858,6 @@ This sample text is displayed when tooltip icon is clicked. Click on the cross b
 
 <ol>
 <li id="fn1"><p>Bootstrap components can also be used in <code>shiny</code> with the help of the <code>bslib</code> package as <a href="https://shiny.posit.co/blog/posts/bslib-dashboards/">this example</a> shows.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Analogous code can be written in R. A good place to start would be <a href="https://bookdown.org/yihui/rmarkdown-cookbook/results-asis.html">this example</a> which leverages a combination of <code>asis</code> and cat. Note that this example is for RMarkdown and not Quarto, so, for Quarto, updates may be necessary.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main>
 <!-- /main column -->
